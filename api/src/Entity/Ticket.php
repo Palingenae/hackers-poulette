@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use App\Repository\TicketRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: TicketRepository::class)]
 class Ticket
@@ -14,31 +17,54 @@ class Ticket
     #[ORM\Column]
     private int $id;
 
-    #[ORM\Column(type: Types::GUID)]
-    private string $uuid;
+    #[ORM\Column(length: 64)]
+    private string $firstname;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private string $file;
+    #[ORM\Column(length: 60)]
+    private string $lastname;
+
+    #[ORM\Column(length: 180)]
+    #[Assert\Email]
+    private string $email;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank]
     private string $description;
 
-    #[ORM\ManyToOne(inversedBy: 'tickets')]
-    private User $Author;
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\File(
+        maxSize: '2048k',
+        maxSizeMessage: 'Image size should not exceed 2MB',
+        extensions: ['jpg', 'jpeg', 'png', 'gif'],
+        extensionsMessage: 'The accepted formats are {{ extension }}'
+    )]
+    private string $file;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUuid(): ?string
+    public function getFirstname(): ?string
     {
-        return $this->uuid;
+        return $this->firstname;
     }
 
-    public function setUuid(string $uuid): static
+    public function setFirstname(string $firstname): static
     {
-        $this->uuid = $uuid;
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(string $lastname): static
+    {
+        $this->lastname = $lastname;
 
         return $this;
     }
@@ -63,18 +89,6 @@ class Ticket
     public function setDescription(string $description): static
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getAuthor(): ?User
-    {
-        return $this->Author;
-    }
-
-    public function setAuthor(?User $Author): static
-    {
-        $this->Author = $Author;
 
         return $this;
     }
