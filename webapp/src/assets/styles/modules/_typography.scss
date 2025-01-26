@@ -1,0 +1,134 @@
+@use "breakpoints";
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  src: url('../fonts/inter/InterVariable.woff2');
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  src: url('../fonts/inter/InterVariable-Italic.woff2');
+}
+
+@font-face {
+  font-family: Host;
+  font-style: normal;
+  src: url('../fonts/host/HostGrotesk-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: Host;
+  font-style: italic;
+  src: url('../fonts/host/HostGrotesk-Italic-VariableFont_wght.ttf');
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-step-7);
+  font-variation-settings: 'wght' 700;
+  font-weight: 700;
+  letter-spacing: var(--spacing-letter-spacing-title);
+  margin-bottom: var(--spacing-200);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-step-6);
+  //font-variation-settings: 'opsz' 12, 'wdth' 100, 'wght' 600;
+  //font-weight: 600;
+  letter-spacing: var(--spacing-letter-spacing-title);
+  margin-bottom: 0;
+}
+
+h3 {
+  font-family: var(--font-text);
+  font-size: var(--fs-step-5);
+  margin-bottom: 0;
+}
+
+h4 {
+  font-family: var(--font-text);
+  font-variation-settings: "wght" 440;
+  font-size: var(--fs-step-4);
+  margin-bottom: 0;
+}
+
+.display {
+  font-family: var(--font-display);
+  letter-spacing: var(--spacing-letter-spacing-display);
+  line-height: var(--spacing-display-line-height);
+
+  &.--fat {
+    font-size: var(--fs-step-8);
+    font-variation-settings: 'opsz' 96, 'wdth' 100, 'wght' 900;
+    font-weight: 900;
+  }
+
+  &.--thin {
+    font-size: var(--fs-step-9);
+    font-variation-settings: 'opsz' 96, 'wdth' 100,'wght' 200;
+    font-weight: 200;
+    letter-spacing: var(--spacing-letter-spacing-display);
+  }
+
+  &.--name {
+    display: flex;
+    //flex-direction: column;
+    gap: var(--spacing-200);
+    margin-bottom: 0;
+    & > span {
+      font-size: var(--fs-step-6);
+      font-variation-settings: 'opsz' 12, 'wdth' 100, 'wght' 600;
+      font-weight: 700;
+    }
+
+    @include breakpoints.lg {
+      gap: var(--spacing-50);
+      flex-direction: column;
+    }
+  }
+}
+
+.prose {
+  font-family: var(--font-text), sans-serif, -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Helvetica Neue”, sans-serif;
+  letter-spacing: var(--spacing-letter-spacing-text);
+  line-height: var(--spacing-body-line-height);
+  font-variation-settings: var(--weight-base-var);
+  max-width: 72ch;
+  font-size: var(--fs-step-2);
+  font-feature-settings: "ss02", "ss07", "ss08", "zero", "dlig", "calt", "case", "zero"; // Inter
+
+  & > a,
+  & > .link {
+    color: inherit;
+  }
+
+  &.--jumbo {
+    line-height: var(--spacing-large-text-line-height);
+    max-width: 40ch;
+    font-size: var(--fs-step-4);
+
+    &:not(:last-of-type) {
+      margin-bottom: var(--spacing-400);
+    }
+  }
+
+  &.--lead {
+    line-height: var(--spacing-body-line-height);
+    max-width: 50ch;
+    font-size: var(--fs-step-3);
+    font-variation-settings: 'wght' 500;
+    margin-bottom: var(--spacing-600);
+  }
+}
+
+.context {
+  &.-subtitle {
+    font-family: var(--font-text);
+    font-size: var(--fs-step-3);
+    font-variation-settings: 'wght' 700;
+    margin-bottom: var(--spacing-100);
+  }
+}

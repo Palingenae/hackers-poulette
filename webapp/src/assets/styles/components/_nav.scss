@@ -1,0 +1,15 @@
+.nav {
+    padding: var(--spacing-100);
+    &__list {
+        display: flex;
+        gap: var(--spacing-200);
+        list-style: none;
+        text-decoration: none;
+        &__item {
+        
+        }
+        &__link {
+            
+        }
+    }
+}

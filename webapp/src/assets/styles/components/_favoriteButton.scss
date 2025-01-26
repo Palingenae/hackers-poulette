@@ -1,0 +1,20 @@
+.favorite { 
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-25);
+    position: absolute;
+    right: var(--spacing-100);
+    bottom:var(--spacing-100);
+    &__button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: none;
+      &__icon {
+        font-size: 32px;
+        fill: #ff0000;
+      }
+    }
+  }
