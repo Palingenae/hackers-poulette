@@ -18,12 +18,15 @@ class Ticket
     private int $id;
 
     #[ORM\Column(length: 64)]
+    #[Assert\NotBlank]
     private string $firstname;
 
     #[ORM\Column(length: 60)]
+    #[Assert\NotBlank]
     private string $lastname;
 
     #[ORM\Column(length: 180)]
+    #[Assert\NotBlank]
     #[Assert\Email]
     private string $email;
 
@@ -69,14 +72,14 @@ class Ticket
         return $this;
     }
 
-    public function getFile(): ?string
+    public function getEmail(): ?string
     {
-        return $this->file;
+        return $this->email;
     }
 
-    public function setFile(?string $file): static
+    public function setEmail(string $email): static
     {
-        $this->file = $file;
+        $this->email = $email;
 
         return $this;
     }
@@ -89,6 +92,18 @@ class Ticket
     public function setDescription(string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(?string $file): static
+    {
+        $this->file = $file;
 
         return $this;
     }
