@@ -1,0 +1,137 @@
+:root {
+  --width-text: 72ch;
+  --width-block: 64rem;
+
+  --font-display: Host, system-ui, serif;
+  --font-text: Inter, system-ui, sans-serif;
+
+  --fs-step-0: clamp(0.94rem, -0.1vi + 0.96rem, 0.8rem);
+  --fs-step-1: clamp(1rem, 0vi + 1rem, 1rem);
+  --fs-step-2: clamp(1.07rem, 0.13vi + 1.04rem, 1.25rem);
+  --fs-step-3: clamp(1.14rem, 0.31vi + 1.07rem, 1.56rem);
+  --fs-step-4: clamp(1.21rem, 0.53vi + 1.1rem, 1.95rem);
+  --fs-step-5: clamp(1.3rem, 0.83vi + 1.11rem, 2.44rem);
+  --fs-step-6: clamp(1.38rem, 1.21vi + 1.12rem, 3.05rem);
+  --fs-step-7: clamp(1.48rem, 1.69vi + 1.11rem, 3.81rem);
+  --fs-step-8: clamp(1.57rem, 2.31vi + 1.07rem, 4.77rem);
+  --fs-step-9: clamp(1.68rem, 3.1vi + 1rem, 5.96rem);
+  --fs-step-10: clamp(1.79rem, 4.1vi + 0.9rem, 7.45rem);
+  --fs-step-11: clamp(1.91rem, 5.36vi + 0.74rem, 9.31rem);
+  --fs-step-12: clamp(2.04rem, 6.95vi + 0.52rem, 11.64rem);
+
+  /* ----- Spacing ----- */
+  --spacing-kerning: normal;
+  --spacing-letter-spacing-display: -0.1rem;
+  --spacing-letter-spacing-title: -0.08rem;
+  --spacing-letter-spacing-text: 0.05rem;
+  --spacing-display-line-height: 1.16;
+  --spacing-large-text-line-height: 1.7;
+  --spacing-body-line-height: 1.6;
+  --spacing-25: 0.25rem;
+  --spacing-50: 0.5rem;
+  --spacing-100: 1rem;
+  --spacing-150: 1.5rem;
+  --spacing-200: 2rem;
+  --spacing-300: 3rem;
+  --spacing-400: 4rem;
+  --spacing-600: 6rem;
+  --spacing-800: 8rem;
+  --spacing-1600: 16rem;
+  --spacing-2400: 24rem;
+  --spacing-3200: 32rem;
+
+  --weight-base-var: "wght" 350;
+  --weight-base-static: 400;
+
+  --neutral-0: #F5F6F6;
+  --neutral-50: #f7f7f8;
+  --neutral-100: #eeeef0;
+  --neutral-200: #d9d9de;
+  --neutral-300: #b8b9c1;
+  --neutral-400: #91939f;
+  --neutral-500: #747583;
+  --neutral-600: #686977;
+  --neutral-700: #4d4e57;
+  --neutral-800: #42424a;
+  --neutral-900: #3a3a40;
+  --neutral-950: #26262b;
+
+  --color-ruby-950: #440D1E;
+  --color-ruby-900: #7A213D;
+  --color-ruby-800: #8E2343;
+  --color-ruby-700: #B4294D;
+  --color-ruby-600: #CA3457;
+  --color-ruby-500: #DD6077;
+  --color-ruby-400: #EA8293;
+  --color-ruby-300: #F2AFB8;
+  --color-ruby-200: #F8D3D8;
+  --color-ruby-100: #FCE7E9;
+  --color-ruby-50: #FDF3F3;
+
+  --color-amber-950: #3A140E;
+  --color-amber-900: #662C21;
+  --color-amber-800: #7C3424;
+  --color-amber-700: #974126;
+  --color-amber-600: #B5592A;
+  --color-amber-500: #dd9140;
+  --color-amber-400: #D69349;
+  --color-amber-300: #DEAC6B;
+  --color-amber-200: #E9CB9E;
+  --color-amber-100: #F5E6D0;
+  --color-amber-50: #FCF6EE;
+
+  --color-citrine-950: #3A200E;
+  --color-citrine-900: #643E1F;
+  --color-citrine-800: #754A1E;
+  --color-citrine-700: #8C5B1C;
+  --color-citrine-600: #AF7D1F;
+  --color-citrine-500: #CB9F27;
+  --color-citrine-400: #DEBC46;
+  --color-citrine-300: #E4CC60;
+  --color-citrine-200: #EEE29A;
+  --color-citrine-100: #F6F1CB;
+  --color-citrine-50: #FBFAEB;
+
+  --color-emerald-950: #0D2115;
+  --color-emerald-900: #193B25;
+  --color-emerald-800: #1E472D;
+  --color-emerald-700: #235936;
+  --color-emerald-600: #2B7041;
+  --color-emerald-500: #3D8D55;
+  --color-emerald-400: #5EA972;
+  --color-emerald-300: #8EC79B;
+  --color-emerald-200: #BBDFC1;
+  --color-emerald-100: #DCEFDE;
+  --color-emerald-50: #F0F9F2;
+
+  --color-cobalt-950: #1C244F;
+  --color-cobalt-900: #283880;
+  --color-cobalt-800: #2F43B2;
+  --color-cobalt-700: #2E49C7;
+  --color-cobalt-600: #375DD9;
+  --color-cobalt-500: #4C79E5;
+  --color-cobalt-400: #6E9CEC;
+  --color-cobalt-300: #9CBFF4;
+  --color-cobalt-200: #C5D8F8;
+  --color-cobalt-100: #DEE8FB;
+  --color-cobalt-50: #EBF1FD;
+
+  --color-amethyst-950: #1D1029;
+  --color-amethyst-900: #341D4A;
+  --color-amethyst-800: #4C2B6B;
+  --color-amethyst-700: #663A90;
+  --color-amethyst-600: #7F4CAE;
+  --color-amethyst-500: #9266BA;
+  --color-amethyst-400: #A581C6;
+  --color-amethyst-300: #B89CD2;
+  --color-amethyst-200: #CCB7DE;
+  --color-amethyst-100: #DFD2EA;
+  --color-amethyst-50: #F0E9F5;
+}
+
+/* ----- Screen sizes ----- */
+$screen-size-xxl: 160rem;
+$screen-size-xl: 120rem;
+$screen-size-lg: 90rem;
+$screen-size-md: 64rem;
+$screen-size-sm: 48rem;

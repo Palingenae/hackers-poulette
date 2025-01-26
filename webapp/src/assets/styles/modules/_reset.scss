@@ -1,0 +1,36 @@
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+::selection {
+  background-color: var(--neutral-900);
+  color: var(--neutral-100);
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  justify-content: space-between;
+  font-family: var(--font-text), -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Helvetica Neue”, sans-serif;
+  font-size: 1em; /* 16px */
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  scroll-behavior: smooth;
+  font-variation-settings: 'wght' 400;
+  font-weight: 400;
+  background-color: var(--neutral-0);
+  color: var(--neutral-900);
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}

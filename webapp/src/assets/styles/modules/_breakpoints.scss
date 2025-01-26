@@ -1,0 +1,31 @@
+@use "variables";
+
+@mixin xxl {
+  @media screen and (min-width: #{variables.$screen-size-xl}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (max-width: #{variables.$screen-size-xl}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (max-width: #{variables.$screen-size-lg}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: #{variables.$screen-size-md}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (max-width: #{variables.$screen-size-sm}) {
+    @content;
+  }
+}
